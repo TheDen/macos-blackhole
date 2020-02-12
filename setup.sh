@@ -31,7 +31,7 @@ trap 'cleanup TERM' TERM
 trap 'cleanup INT' INT
 
 download_and_install_gas_mask() {
-  echo "Dowloading Gas Mask..."
+  echo "Downloading Gas Mask..."
   curl -sL "${gasmask_url}" -o "${temp_folder}/${gasmask_zip}"
   echo "${temp_folder}/${gasmask_zip}"
   (
