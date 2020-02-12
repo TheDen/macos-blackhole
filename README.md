@@ -4,13 +4,36 @@
 
 A simple bash script I use on my MacBook. When run the script will:
 
-* Download and install the simple hosts file manager [Gas Mask](https://github.com/2ndalpha/gasmask) 
+* Download and install the simple hosts file manager [Gas Mask](https://github.com/2ndalpha/gasmask)
 * Download [StevenBlack's](https://github.com/StevenBlack/hosts) well-curated host files to load within Gas Mask
 * If Gas Mask is already installed, the host files will be updated to the latest versions
 
+
+## How do I run it?
+
+Either
+
+```
+git clone https://github.com/TheDen/macos-blackhole
+./macos-blackhole/setup.sh
+```
+
+```
+curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/setup.sh -o setup.sh
+chmod +x setup.sh
+./setup.sh
+```
+
+
+Or live dangerously and pipe the script to `bash`
+
+```
+curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/setup.sh | bash
+```
+
 ## Why not just use [pi-Hole](https://github.com/pi-hole/pi-hole)?
 
-Sometimes pi-hole can't be deployed on networks you have control of (or untrusted networks). This allows mobility with respect to host blocking.
+I love pi-hole, but sometimes pi-hole can't be deployed on networks where the the user is not an admin (or on untrusted networks). This allows mobility with respect to host blocking.
 
 ## Contributions and Caveats
 
