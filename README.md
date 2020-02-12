@@ -10,5 +10,14 @@ A simple bash script I use on my MacBook. When run the script will:
 
 ## Why not just use [pi-Hole](https://github.com/pi-hole/pi-hole)?
 
-Sometimes pi-hole can't be deployed on networks you have control of (or unstrusted networks). This allows mobility with respect to host blocking.
+Sometimes pi-hole can't be deployed on networks you have control of (or untrusted networks). This allows mobility with respect to host blocking.
 
+## Contributions and Caveats
+
+Room for improvement and considerations for PRs:
+
+* Currently it's set up to only download two host files from SteveBlack's repo. Personally these are the two I mainly use, though the script could be updated to download them all
+* This uses version `0.8.5` of Gas Mask since it's the latest one listed under the repo's [releases page](https://github.com/2ndalpha/gasmask/releases). Version [`0.8.6`](http://gmask.clockwise.ee/files/gas_mask_0.8.6.zip) is available, but it's hosted on a server without `https`, so that's a dealbreaker.
+* Even though this is a personal script, I attempted to make it portable, deps are `bash` w/ builtins (avoiding v4 bashisms), `curl`, and `unzip`. So it's not guaranteed to work on your machine (but most likely will).
+* The script ought to be formatted with `shfmt -i 2 -ci -sr` ([https://github.com/mvdan/sh](https://github.com/mvdan/sh)) and the script must pass [shellcheck](https://github.com/koalaman/shellcheck) (could potentially add a CI)
+* There is inherit hackyness in this setup, but it's quick and works for me
