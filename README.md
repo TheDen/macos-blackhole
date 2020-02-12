@@ -31,7 +31,7 @@ Or live dangerously and pipe the script to `bash`
 curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/setup.sh | bash
 ```
 
-## Why not just use [pi-Hole](https://github.com/pi-hole/pi-hole)?
+## Why not just use [pi-hole](https://github.com/pi-hole/pi-hole)?
 
 I love pi-hole, but sometimes pi-hole can't be deployed on networks where the the user is not an admin (or on untrusted networks). This allows mobility with respect to host blocking.
 
