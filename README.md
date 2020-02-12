@@ -45,3 +45,13 @@ Room for improvement and considerations for PRs:
 * The script ought to be formatted with `shfmt -i 2 -ci -sr` ([https://github.com/mvdan/sh](https://github.com/mvdan/sh)) and the script must pass [shellcheck](https://github.com/koalaman/shellcheck) (could potentially add a CI)
 * A nice way to run the script on schedule in MacOS? `crontab`?
 * There is inherit hackyness in this setup, but it's quick and works for me
+
+
+## What is MacOS's default host file?
+
+```
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1 localhost
+fe80::1%lo0	localhost
+```
