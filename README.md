@@ -1,6 +1,6 @@
 # macos-blackhole
 
-## What is is?
+## What is this?
 
 A simple bash script I use on my MacBook. When run the script will:
 
