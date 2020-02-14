@@ -14,10 +14,13 @@ gasmask_checksum="e62755aa8c8466c4149d37057f1a29cef8bae7fe77949fa9e1123eebf9b3b0
 gasmask_install_dir="/Applications"
 gasmask_local_dir="${HOME}/Library/Gas Mask/Local"
 temp_folder=$(mktemp -d)
+
 # Unified hosts = (adware + malware)
-unified_hosts="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-# Unified hosts + fakenews + gambling + porn + social
-unified_hosts_fakenews_gambling_porn_social="https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts"
+hostfiles=(
+  'unified_hosts=https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts'
+  'unified hosts_fakenews_gambling_porn=https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts'
+  'unified_hosts_fakenews_gambling_porn_social=https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts'
+)
 
 # Cleanup function
 cleanup() {
@@ -72,7 +75,11 @@ until [ -d "${gasmask_local_dir}" ]; do
 done
 
 # Download the hostfiles
-download_hostfile "${unified_hosts}" "${!unified_hosts@}"
-download_hostfile "${unified_hosts_fakenews_gambling_porn_social}" "${!unified_hosts_fakenews_gambling_porn_social@}"
+for host in "${hostfiles[@]}"; do
+  host_filename=$(awk -F "=" '{print $1}' <<< "${host}")
+  host_url=$(awk -F "=" '{print $2}' <<< "${host}")
+  download_hostfile "${host_url}" "${host_filename}"
+done
+
 restart_gas_mask
 cleanup
