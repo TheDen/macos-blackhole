@@ -13,12 +13,12 @@ A simple bash script I use on my MacBook. When run the script will:
 
 Either
 
-```
+```bash
 git clone https://github.com/TheDen/macos-blackhole
 ./macos-blackhole/setup.sh
 ```
 
-```
+```bash
 curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/setup.sh -o setup.sh
 chmod +x setup.sh
 ./setup.sh
@@ -27,7 +27,7 @@ chmod +x setup.sh
 
 Or live dangerously and pipe the script to `bash`
 
-```
+```bash
 curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/setup.sh | bash
 ```
 
