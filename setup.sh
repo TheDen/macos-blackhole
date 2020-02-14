@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script will download and install https://github.com/2ndalpha/gasmask if not installed.
-# Two host files from https://github.com/StevenBlack/hosts will be pulled for Gas Mask.
+# Three host files from https://github.com/StevenBlack/hosts will be pulled for Gas Mask.
 # If Gas Mask is already installed the host files will be updated.
 
 set -euo pipefail
