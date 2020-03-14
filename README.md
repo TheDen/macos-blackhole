@@ -19,11 +19,10 @@ git clone https://github.com/TheDen/macos-blackhole
 ```
 
 ```bash
-curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/setup.sh -o macos-blackhole.sh
+curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/macos-blackhole.sh -o macos-blackhole.sh
 chmod +x macos-blackhole.sh
 ./macos-blackhole.sh
 ```
-
 
 Or live dangerously and pipe the script to `bash`
 
