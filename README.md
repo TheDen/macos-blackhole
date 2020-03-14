@@ -15,20 +15,20 @@ Either
 
 ```bash
 git clone https://github.com/TheDen/macos-blackhole
-./macos-blackhole/setup.sh
+./macos-blackhole/macos-blackhole.sh
 ```
 
 ```bash
-curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/setup.sh -o setup.sh
-chmod +x setup.sh
-./setup.sh
+curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/setup.sh -o macos-blackhole.sh
+chmod +x macos-blackhole.sh
+./macos-blackhole.sh
 ```
 
 
 Or live dangerously and pipe the script to `bash`
 
 ```bash
-curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/setup.sh | bash
+curl -sL https://raw.githubusercontent.com/TheDen/macos-blackhole/master/macos-blackhole.sh | bash
 ```
 
 ## Why not just use [pi-hole](https://github.com/pi-hole/pi-hole)?
@@ -40,7 +40,6 @@ I love pi-hole, but sometimes pi-hole can't be deployed on networks where the th
 Room for improvement and considerations for PRs:
 
 * Currently it's set up to only download two host files from SteveBlack's repo. Personally these are the two I mainly use, though the script could be updated to download them all
-* This uses version `0.8.5` of Gas Mask since it's the latest one listed under the repo's [releases page](https://github.com/2ndalpha/gasmask/releases). Version [`0.8.6`](http://gmask.clockwise.ee/files/gas_mask_0.8.6.zip) is available, but it's hosted on a server without `https`, so that's a dealbreaker.
 * Even though this is a personal script, I attempted to make it portable, deps are builtins, `bash` (avoiding v4 bashisms), `curl`, `unzip`, and `shasum`. So it's not guaranteed to work on your machine (but most likely will).
 * The script ought to be formatted with `shfmt -i 2 -ci -sr` ([https://github.com/mvdan/sh](https://github.com/mvdan/sh)) and the script must pass [shellcheck](https://github.com/koalaman/shellcheck) (could potentially add a CI)
 * A nice way to run the script on schedule in MacOS? `crontab`?
